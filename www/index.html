@@ -1,44 +1,214 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link href='assets/images/apple-touch-icon-57x57.png' rel='apple-touch-icon'>
+<link href='assets/apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+<link href='assets/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
+<link href='assets/apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+<link href="http://game-on-staging.herokuapp.com/assets/application-393ec469f94f37ce344ac44f6e2aab43.css" rel="stylesheet" type="text/css">
+<meta name="msapplication-tap-highlight" content="no" />
+<title>Hello World</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+<div data-role="page" id="home">
+<div class='navbar navbar-default navbar-static-top' id='slide-nav' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<a class='navbar-toggle'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</a>
+<a class='navbar-location' href='/set-location'>
+<span class='glyphicon glyphicon-map-marker'></span>
+</a>
+<a class='navbar-brand' href='/'>KoordIt</a>
+</div>
+<div id='slidemenu'>
+<ul class='nav navbar-nav'>
+<li><a href="signin.html">Sign In</a></li>
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='index.html'>
+Activities
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu'>
+<li><a href="index.html">All</a></li>
+<li><a href="create-event.html">Create</a></li>
+<li>
+<a href="single.html">Single</a>
+</li>
+<li>
+<a href="location.html">Choose Location</a>
+</li>
+<li>
+<a href="invite-friends.html">Invite Friends</a>
+</li>
+
+
+</ul>
+</li>
+
+</ul>
+
+</div>
+</div>
+</div>
+<div id='page-content'>
+<div class='btn-group btn-group-justified action-bar activities-filters'>
+<div class='btn-group'>
+<a class='btn btn-gradient btn-categories dropdown-toggle'>
+Categories
+<span class='caret'></span>
+</a>
+</div>
+<div class='btn-group'>
+<a class='btn btn-gradient btn-timeframe dropdown-toggle'>
+Timeframe
+<span class='caret'></span>
+</a>
+</div>
+<div class='btn-group'>
+<a class='btn btn-gradient btn-friends dropdown-toggle' href='/events?friends=true'>
+Friends
+<span class='caret'></span>
+</a>
+</div>
+</div>
+<div id='event-filters'>
+<form accept-charset="UTF-8" action="/events" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class='category-filter filter'>
+<input id="category_ids" name="category_ids" type="hidden" value="" />
+<input id="friends" name="friends" type="hidden" />
+<div class='activity-wrapper'>
+<div class='btn-group activity-category'>
+<a class='btn btn-activity' data-id='53510f593038380002000000' type='button'>
+deal
+
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002000000' type='button'>
+nightlife
+<i class="fa fa-glass"></i>
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002010000' type='button'>
+leagues
+<i class="fa fa-trophy"></i>
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002020000' type='button'>
+the arts
+<i class="fa fa-picture-o"></i>
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002030000' type='button'>
+entertainment
+<i class="fa fa-music"></i>
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002040000' type='button'>
+sports
+<i class="fa fa-dribbble"></i>
+</a>
+<a class='btn btn-activity' data-id='537079f13862390002000000' type='button'>
+food
+
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002050000' type='button'>
+other
+
+</a>
+</div>
+</div>
+</div>
+<div class='timeframe-filter filter'>
+<!-- =link_to 'Create Event', new_event_path, html_options = {class: "create_event ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all"} -->
+<!-- = label_tag 'duration', 'Duration' -->
+<select id="duration" name="duration"><option value="">Select Timeframe</option><option value="this_week">This week</option>
+<option value="beyond_this_week">Beyond this week</option></select>
+<!-- = label_tag :q_s, 'Order' -->
+</div>
+<input class="btn btn-sm btn-green-gradient btn-filter" name="commit" type="submit" value="Filter" />
+</form>
+
+</div>
+<div class='activities-list'>
+<div class='list-group' id='grouped-events'>
+<div class='list-group-item heading'> Sunday </div>
+        <a class='list-group-item' href='' data-transition="fade">
+        <div class='pull-right' href='#'> <img alt="Soccer" class="activity-thumb" src="assets/images/soccer.jpeg" /> </div>
+        <div class='list-body'>
+          <h6 class='media-heading'>Soccer</h6>
+          <div class='activity-icon'> <i class="fa fa-trophy"></i> </div>
+          <p class='date pull-left'> Today </p>
+          <p class='pull-right'> <span class='distance'>0.3</span> miles </p>
+          <div class='clear'></div>
+          <p> 5:30PM-7:00PM <br>
+            Drexel Fieldhouse, 3203 Market St </p>
+          <div class='spots-filled'> 11/15 </div>
+          <div class='people'> <img alt="Profile1" class="circle-profile friend" src="assets/images/profiles/profile1.jpg" /> <img alt="Profile2" class="circle-profile friend" src="assets/images/profiles/profile2.jpg" /> <img alt="Profile3" class="circle-profile friend" src="assets/images/profiles/profile3.jpg" /> <img alt="Profile4" class="circle-profile" src="assets/images/profiles/profile4.jpg" /> <img alt="Profile5" class="circle-profile" src="assets/images/profiles/profile5.jpg" /> </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
+        <div class='progress'>
+          <div aria-valuemax='100' aria-valuemin='0' aria-valuenow='60' class='progress-bar' role='progressbar' style='width: 60%;'></div>
+        </div>
+        </a>
+</div>
+</div>
+
+
+<script src="http://game-on-staging.herokuapp.com/assets/application-e1f92ddbf0a4e9f357a5d8acc11e168d.js"></script>
+<script>
+  $(document).ready(function () {
+  
+    //stick in the fixed 100% height behind the navbar but don't wrap it
+    $('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));
+  
+    // Enter your ids or classes
+    var toggler = '.navbar-toggle';
+    var pagewrapper = '#page-content';
+    var navigationwrapper = '.navbar-header';
+    var menuwidth = '100%'; // the menu inside the slide menu itself
+    var slidewidth = '200px';
+    var menuneg = '-200px';
+    var slideneg = '-200px';
+  
+    $("#slide-nav").on("click", toggler, function (e) {
+  
+        var selected = $(this).hasClass('slide-active');
+  
+        $('#slidemenu').stop().animate({
+            left: selected ? menuneg : '0px'
+        });
+  
+        $('#navbar-height-col').stop().animate({
+            left: selected ? slideneg : '0px'
+        });
+  
+        $(pagewrapper).stop().animate({
+            left: selected ? '0px' : slidewidth
+        });
+  
+        $(navigationwrapper).stop().animate({
+            left: selected ? '0px' : slidewidth
+        });
+        $(this).toggleClass('slide-active', !selected);
+        $('#slidemenu').toggleClass('slide-active');
+        $('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
+    });
+    var selected = '#slidemenu, #page-content, body, .navbar, .navbar-header';
+  
+  });
+</script>
+<script type="text/javascript" src="cordova.js"></script> 
+<script type="text/javascript" src="js/index.js"></script> 
+<script type="text/javascript">
             app.initialize();
-        </script>
-    </body>
+        </script> 
+</div>
+</body>
 </html>

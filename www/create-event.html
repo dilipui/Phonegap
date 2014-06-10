@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link href='assets/images/apple-touch-icon-57x57.png' rel='apple-touch-icon'>
+<link href='assets/apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+<link href='assets/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
+<link href='assets/apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+<link href="http://game-on-staging.herokuapp.com/assets/application-393ec469f94f37ce344ac44f6e2aab43.css" rel="stylesheet" type="text/css">
+<meta name="msapplication-tap-highlight" content="no" />
+<title>Gameon</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+<div data-role="page" id="create-event">
+<div class='navbar navbar-default navbar-static-top' id='slide-nav' role='navigation'>
+<div class='container'>
+<div class='navbar-header'>
+<a class='navbar-toggle'>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</a>
+<a class='navbar-location' href='/set-location'>
+<span class='glyphicon glyphicon-map-marker'></span>
+</a>
+<a class='navbar-brand' href='/'>KoordIt</a>
+</div>
+<div id='slidemenu'>
+<ul class='nav navbar-nav'>
+<li><a href="signin.html">Sign In</a></li>
+<li class='dropdown'>
+<a class='dropdown-toggle' data-toggle='dropdown' href='index.html'>
+Activities
+<b class='caret'></b>
+</a>
+<ul class='dropdown-menu'>
+<li><a href="index.html">All</a></li>
+<li><a href="create-event.html">Create</a></li>
+<li>
+<a href="single.html">Single</a>
+</li>
+<li>
+<a href="location.html">Choose Location</a>
+</li>
+<li>
+<a href="invite-friends.html">Invite Friends</a>
+</li>
+
+
+</ul>
+</li>
+
+</ul>
+
+</div>
+</div>
+</div>
+
+<div id='page-content'>
+<div class='content create-activity form-page'>
+<div class='text-center'>
+<h1>Create An Activity</h1>
+</div>
+<form accept-charset="UTF-8" action="/events" class="new_event" id="new_event" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="NETkptp6K9nZph70HOvSOI2ZX2kteR5R06TgdWdayFM=" /></div><div class='form-group'>
+<div class='input-group'>
+<span class='input-group-addon'><i class="fa fa-star"></i></span>
+<input class="form-control" id="event_name" name="event[name]" placeholder="Title" type="text" />
+</div>
+</div>
+<div class='form-group'>
+<div class='input-group'>
+<span class='input-group-addon'><i class="fa fa-tag"></i></span>
+<input class="form-control" id="event_place_id" name="event[place_id]" placeholder="Place" type="text" />
+</div>
+</div>
+<div class='form-group'>
+<div class='input-group'>
+<span class='input-group-addon'><i class="fa fa-map-marker"></i></span>
+<input autocomplete="off" class="form-control" id="event_address" name="event[address]" placeholder="Address" type="text" />
+</div>
+</div>
+<div class='form-group'>
+<div class='input-group'>
+<span class='input-group-addon'><i class="fa fa-dollar"></i></span>
+<input class="form-control date start" id="event_cost" name="event[cost]" placeholder="Cost" type="text" />
+</div>
+</div>
+<div class='eventDatePair'>
+<div class='form-group'>
+<div class='input-group'>
+<span class='input-group-addon'><i class="fa fa-calendar"></i></span>
+<input autocomplete="off" class="form-control date start" id="event_start_date" min="2014-06-10" name="event[start_date]" placeholder="Date" type="date" />
+</div>
+</div>
+<h6>Time</h6>
+<div class='event-section eventTime'>
+<div class='row'>
+<div class='col-xs-5'>
+<select class="form-control" id="event_start_time" name="event[start_time]"><option value="06:00 AM">06:00 AM</option>
+<option value="06:30 AM">06:30 AM</option>
+<option value="07:00 AM">07:00 AM</option>
+<option value="07:30 AM">07:30 AM</option>
+<option value="08:00 AM">08:00 AM</option>
+<option value="08:30 AM">08:30 AM</option>
+<option value="09:00 AM">09:00 AM</option>
+<option value="09:30 AM">09:30 AM</option>
+<option value="10:00 AM">10:00 AM</option>
+<option value="10:30 AM">10:30 AM</option>
+<option value="11:00 AM">11:00 AM</option>
+<option value="11:30 AM">11:30 AM</option>
+<option value="12:00 PM">12:00 PM</option>
+<option value="12:30 PM">12:30 PM</option>
+<option value="01:00 PM">01:00 PM</option>
+<option value="01:30 PM">01:30 PM</option>
+<option value="02:00 PM">02:00 PM</option>
+<option value="02:30 PM">02:30 PM</option>
+<option value="03:00 PM">03:00 PM</option>
+<option value="03:30 PM">03:30 PM</option>
+<option value="04:00 PM">04:00 PM</option>
+<option value="04:30 PM">04:30 PM</option>
+<option value="05:00 PM">05:00 PM</option>
+<option value="05:30 PM">05:30 PM</option>
+<option value="06:00 PM">06:00 PM</option>
+<option value="06:30 PM">06:30 PM</option>
+<option value="07:00 PM">07:00 PM</option>
+<option value="07:30 PM">07:30 PM</option>
+<option value="08:00 PM">08:00 PM</option>
+<option value="08:30 PM">08:30 PM</option>
+<option value="09:00 PM">09:00 PM</option>
+<option value="09:30 PM">09:30 PM</option>
+<option value="10:00 PM">10:00 PM</option>
+<option value="10:30 PM">10:30 PM</option>
+<option value="11:00 PM">11:00 PM</option></select>
+</div>
+<div class='col-xs-2'>
+<h6>To</h6>
+</div>
+<div class='col-xs-5'>
+<select class="form-control" id="event_end_time" name="event[end_time]"><option value="06:00 AM">06:00 AM</option>
+<option value="06:30 AM">06:30 AM</option>
+<option value="07:00 AM">07:00 AM</option>
+<option value="07:30 AM">07:30 AM</option>
+<option value="08:00 AM">08:00 AM</option>
+<option value="08:30 AM">08:30 AM</option>
+<option value="09:00 AM">09:00 AM</option>
+<option value="09:30 AM">09:30 AM</option>
+<option value="10:00 AM">10:00 AM</option>
+<option value="10:30 AM">10:30 AM</option>
+<option value="11:00 AM">11:00 AM</option>
+<option value="11:30 AM">11:30 AM</option>
+<option value="12:00 PM">12:00 PM</option>
+<option value="12:30 PM">12:30 PM</option>
+<option value="01:00 PM">01:00 PM</option>
+<option value="01:30 PM">01:30 PM</option>
+<option value="02:00 PM">02:00 PM</option>
+<option value="02:30 PM">02:30 PM</option>
+<option value="03:00 PM">03:00 PM</option>
+<option value="03:30 PM">03:30 PM</option>
+<option value="04:00 PM">04:00 PM</option>
+<option value="04:30 PM">04:30 PM</option>
+<option value="05:00 PM">05:00 PM</option>
+<option value="05:30 PM">05:30 PM</option>
+<option value="06:00 PM">06:00 PM</option>
+<option value="06:30 PM">06:30 PM</option>
+<option value="07:00 PM">07:00 PM</option>
+<option value="07:30 PM">07:30 PM</option>
+<option value="08:00 PM">08:00 PM</option>
+<option value="08:30 PM">08:30 PM</option>
+<option value="09:00 PM">09:00 PM</option>
+<option value="09:30 PM">09:30 PM</option>
+<option value="10:00 PM">10:00 PM</option>
+<option value="10:30 PM">10:30 PM</option>
+<option value="11:00 PM">11:00 PM</option></select>
+</div>
+</div>
+</div>
+</div>
+<h6>Activity Type</h6>
+<div class='event-section activity-wrapper'>
+<input id="event_category_ids_list" name="event[category_ids_list]" type="hidden" value="" />
+<div class='btn-group activity-category'>
+<a class='btn btn-activity' data-id='53510f593038380002000000' type='button'>
+deal
+
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002000000' type='button'>
+nightlife
+<i class="fa fa-glass"></i>
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002010000' type='button'>
+leagues
+<i class="fa fa-trophy"></i>
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002020000' type='button'>
+the arts
+<i class="fa fa-picture-o"></i>
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002030000' type='button'>
+entertainment
+<i class="fa fa-music"></i>
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002040000' type='button'>
+sports
+<i class="fa fa-dribbble"></i>
+</a>
+<a class='btn btn-activity' data-id='537079f13862390002000000' type='button'>
+food
+
+</a>
+<a class='btn btn-activity' data-id='533ea34e3031640002050000' type='button'>
+other
+
+</a>
+</div>
+</div>
+<div class='event-section'>
+<div class='form-group'>
+<h6>Public</h6>
+<div class='onoffswitch'>
+<input name="event[public]" type="hidden" value="0" /><input checked="checked" class="onoffswitch-checkbox" id="myonoffswitch" name="event[public]" type="checkbox" value="1" />
+<label class='onoffswitch-label' for='myonoffswitch'>
+<div class='onoffswitch-inner'></div>
+<div class='onoffswitch-switch'></div>
+</label>
+</div>
+</div>
+<div class='form-group'>
+<h6>Limit</h6>
+<div class='slider'>
+<input max='30' min='2' name='event[limit]' onchange='rangevalue.value=value' type='range' value='10'>
+<output id='rangevalue'>10</output>
+</div>
+</div>
+</div>
+<div class='text-center'>
+<div class='btn-upload' href='#'>
+<i class="fa fa-camera"></i>
+<input class="upload" data-fp-apikey="AgpcRSlJsTjrBz7d6eXeAz" data-fp-policy="eyJleHBpcnkiOjE0MDI0MDI3MTgsImNhbGwiOlsicGljayIsInN0b3JlIl19" data-fp-signature="b4e7e5c3da7b1bd2067dc31b53ceb89226cb4d19fe01afe759c045769becb62c" id="event_filepicker_url" name="event[filepicker_url]" onchange="cropFilePickerUpload(event)" type="filepicker" />
+</div>
+<h6>Cover Photo</h6>
+</div>
+<img id='file_picker_crop_target' style='max-width: 100%;'>
+<div class='form-actions'>
+<input class="btn btn-green-gradient submit btn-square" name="commit" type="submit" value="Create Event" />
+</div>
+<script src='http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=places' type='text/javascript'></script>
+<script>
+  google.maps.event.addDomListener(window, 'load', initialize);
+  function initialize() {
+      // Address Autocomplete
+      var input =  document.getElementById("event_address") ;
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      google.maps.event.addListener(autocomplete, 'place_changed', function() {
+          // do something on selection of address
+          // alert(autocomplete.getPlace().geometry.location)
+      });
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+</form>
+
+
+</div>
+
+</div>
+
+<script src="http://game-on-staging.herokuapp.com/assets/application-e1f92ddbf0a4e9f357a5d8acc11e168d.js"></script>
+<script>
+  $(document).ready(function () {
+  
+    //stick in the fixed 100% height behind the navbar but don't wrap it
+    $('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));
+  
+    // Enter your ids or classes
+    var toggler = '.navbar-toggle';
+    var pagewrapper = '#page-content';
+    var navigationwrapper = '.navbar-header';
+    var menuwidth = '100%'; // the menu inside the slide menu itself
+    var slidewidth = '200px';
+    var menuneg = '-200px';
+    var slideneg = '-200px';
+  
+    $("#slide-nav").on("click", toggler, function (e) {
+  
+        var selected = $(this).hasClass('slide-active');
+  
+        $('#slidemenu').stop().animate({
+            left: selected ? menuneg : '0px'
+        });
+  
+        $('#navbar-height-col').stop().animate({
+            left: selected ? slideneg : '0px'
+        });
+  
+        $(pagewrapper).stop().animate({
+            left: selected ? '0px' : slidewidth
+        });
+  
+        $(navigationwrapper).stop().animate({
+            left: selected ? '0px' : slidewidth
+        });
+        $(this).toggleClass('slide-active', !selected);
+        $('#slidemenu').toggleClass('slide-active');
+        $('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
+    });
+    var selected = '#slidemenu, #page-content, body, .navbar, .navbar-header';
+  
+  });
+</script>
+<script type="text/javascript" src="cordova.js"></script> 
+<script type="text/javascript" src="js/index.js"></script> 
+<script type="text/javascript">
+            app.initialize();
+        </script> 
+</div>
+</body>
+</html>
