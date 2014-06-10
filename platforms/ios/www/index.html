@@ -12,14 +12,25 @@
 <link href='assets/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
 <link href='assets/apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
 <link href="http://game-on-staging.herokuapp.com/assets/application-393ec469f94f37ce344ac44f6e2aab43.css" rel="stylesheet" type="text/css">
+<link href="assets/stylesheets/app.css" rel="stylesheet" type="text/css"><link href="assets/stylesheets/app.css" rel="stylesheet" type="text/css">
 <meta name="msapplication-tap-highlight" content="no" />
 <title>Hello World</title>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-
+<script src="assets/javascripts/fastclick.js"></script>
 </head>
 <body>
+<script>
+document.addEventListener('deviceready', function () {
+	FastClick.attach(document.body);
+	});
+</script>
+
+<script>
+document.addEventListener('deviceready', function () {
+	FastClick.attach(document.body);
+	});
+</script>
 <div data-role="page" id="home">
 <div class='navbar navbar-default navbar-static-top' id='slide-nav' role='navigation'>
 <div class='container'>
