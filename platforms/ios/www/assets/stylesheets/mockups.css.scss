@@ -1,0 +1,168 @@
+// Place all the styles related to the mockups controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic);
+
+.ui-page-theme-a .ui-bar-inherit.red-bar {
+	background: red;
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+}
+
+body, p, .ui-btn {
+	font-family: 'Lato', sans-serif;
+}
+
+h1, h2 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+
+}
+
+
+.header.ui-header.ui-bar-inherit {
+  background: red;
+  border-color: red;
+  .ui-title {
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+
+
+.text-center {
+	text-align: center;
+}
+
+
+.custom-btn {
+	position: relative;
+}
+
+
+.ui-body {
+	margin: 15px 0;
+}
+
+
+
+/**************************************************************/
+/* SINGLE ACTIVITY */
+
+#map-canvas-activity{
+  width: auto;
+  height: 150px;
+}
+
+
+.ui-listview.people > .ui-li-has-thumb > .ui-btn, .ui-listview.people > .ui-li-static.ui-li-has-thumb {
+	min-height: 28px;
+	padding-left: 60px;
+}
+
+.single-activity h3 small {
+	font-weight: 300;
+	float: right;
+	font-size: 19px;
+}
+
+.single-activity .ui-body h3 {
+	margin-bottom: 0;
+}
+
+.single-activity .ui-body p {
+	margin: 5px 0 10px;
+}
+
+.location-img {
+	max-width: 100%;
+}
+
+/**************************************************************/
+/* CREATE ACTIVITY */
+.create-activity h3 small {
+	font-weight: 300;
+	float: right;
+	font-size: 19px;
+}
+
+.create-activity h1 {
+	text-align: center;
+	margin-top: -10px;
+}
+
+.create-activity span.flipswitch {
+	float: right;
+}
+
+.create-activity .create-listview {
+	margin-top: -1px;
+}
+
+.create-activity .ui-field-contain > h3 {
+	float: left;
+	width: 20%;
+	margin: .5em 2% 0 0;
+}
+
+.create-activity .ui-field-contain > label {
+	font-family: 'Lato', sans-serif;
+	font-size: 1.17em;
+	font-weight: 700;
+	text-transform: normal;
+
+}
+
+
+.create-btn {
+	margin-top: 20px;
+}
+
+
+/**************************************************************/
+/* ACTIVITY FEED */
+
+.activity-filter {
+	margin-bottom: 40px;
+}
+
+.activity-filter h4 small {
+	font-weight: 300;
+}
+
+
+.activity-filter label {
+	font-weight: normal;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.activity-filter .ui-btn {
+	white-space: normal;
+}
+
+.ui-listview > li.ui-first-child img:first-child:not(.ui-li-icon) {
+	-webkit-border-top-left-radius: 25px;
+	border-top-left-radius: 25px;
+}
+
+
+.ui-listview > li h2 {
+	font-size: 18px;
+	margin: 0 0 10px;
+	font-weight: 700;
+	color: #333;
+}
+
+
+.ui-listview > li p {
+	font-weight: 300;
+	line-height: 1.5em;
+}
+
+
